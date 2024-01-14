@@ -8,9 +8,11 @@ class UsersController < ApplicationController
       @users = []
     end
 
-    if turbo_frame_request?
-      render partial: "layouts/search_results", locals: {users: @users}
-    end
+    # needs fixing
+    # if turbo_frame_request?
+    #   render partial: "layouts/search_results", locals: {users: @users}
+    # end
+    redirect_back(fallback_location: root_path)
   end
   
   def show
